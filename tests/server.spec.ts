@@ -1,25 +1,12 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Server } from '@hapi/hapi';
-
-const init = () => {
-    const server = new Server();
-
-    server.route({
-        method: 'GET',
-        path: '/hello',
-        handler: (request, h) => {
-            return h.response('Hello world');
-        },
-    });
-
-    return server;
-};
+import { init } from '../src/server.js';
 
 describe('Hello world', () => {
     let app: Server;
 
-    beforeEach(() => {
-        app = init();
+    beforeEach(async () => {
+        app = await init();
     });
 
     it('should say hello', async () => {
