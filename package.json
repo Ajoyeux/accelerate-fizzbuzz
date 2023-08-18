@@ -10,6 +10,7 @@
         "test": "vitest",
         "format": "prettier --write .",
         "lint": "eslint --ext .ts,.json,.js --ignore-path .gitignore .",
+        "type-check": "tsc -p tsconfig.json --noEmit",
         "prepare": "husky install"
     },
     "lint-staged": {
