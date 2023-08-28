@@ -4,7 +4,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "target": "es2022",
-        "module": "ESNext",
+        "module": "NodeNext",
         "moduleResolution": "NodeNext",
         "rootDir": ".",
         "outDir": "./dist",
