@@ -21,6 +21,8 @@
     },
     "dependencies": {
         "@hapi/hapi": "^21.3.2",
+        "applicationinsights": "^2.7.3",
+        "dotenv": "^16.3.1",
         "husky": "^8.0.0"
     },
     "devDependencies": {
