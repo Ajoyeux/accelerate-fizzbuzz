@@ -17,13 +17,5 @@ export const init = async ({ logger }: Dependencies) => {
         logger.logError(event.error);
     });
 
-    server.route({
-        method: 'GET',
-        path: '/hello',
-        handler: (request, h) => {
-            return h.response('Hello world');
-        },
-    });
-
     return server;
 };
