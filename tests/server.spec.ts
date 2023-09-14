@@ -1,20 +1,38 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vitest } from 'vitest';
 import { Server } from '@hapi/hapi';
-import { init } from '../src/server.js';
+import { Dependencies, init } from '../src/server.js';
+import { Mocks } from './test-utils.js';
 
-describe('Hello world', () => {
+describe('Messages History', () => {
     let app: Server;
+    let mocks: Mocks<Omit<Dependencies, 'database'>>;
 
     beforeEach(async () => {
-        app = await init();
+        mocks = {
+            logger: {
+                logError: vitest.fn(),
+            },
+        };
+        app = await init(mocks);
     });
 
-    it('should say hello', async () => {
-        const response = await app.inject({
-            method: 'GET',
-            url: '/hello',
-        });
+    describe('Error handler', () => {
+        it('should log errors', async () => {
+            const error = new Error('error for tests');
+            app.route({
+                method: 'GET',
+                path: '/error',
+                handler: () => {
+                    throw error;
+                },
+            });
 
-        expect(response.payload).toBe('Hello world');
+            await app.inject({
+                method: 'GET',
+                url: '/error',
+            });
+
+            expect(mocks.logger.logError).toHaveBeenCalledWith(error);
+        });
     });
 });
