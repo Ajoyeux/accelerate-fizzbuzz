@@ -1,6 +1,6 @@
 import { Server } from '@hapi/hapi';
 import process from 'process';
-import { Logger } from './logger.js';
+import { Logger } from 'clienteling-commons';
 
 export type Dependencies = {
     logger: Logger;

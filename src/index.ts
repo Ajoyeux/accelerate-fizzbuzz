@@ -1,19 +1,16 @@
 import { init } from './server.js';
-import { Logger } from './logger.js';
 import { createHelloWorldRoute } from './routes/get-hello-world.js';
 import dotenv from 'dotenv';
 import process from 'process';
-import appInsights from 'applicationinsights';
+import { createLogger, Logger } from 'clienteling-commons';
 
 dotenv.config();
-appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING).start();
-appInsights.defaultClient.context.tags['ai.cloud.role'] = 'NAME-ME'; // TODO Use application name instead of NAME-ME
 
-const logger: Logger = {
-    logError: (exception) => {
-        if (exception instanceof Error) appInsights.defaultClient.trackException({ exception });
-    },
-};
+const logger: Logger = createLogger({
+    NODE_ENV: process.env.NODE_ENV,
+    APPLICATIONINSIGHTS_CONNECTION_STRING: process.env.APPLICATIONINSIGHTS_CONNECTION_STRING,
+    applicationName: 'NAME-ME', // TODO Use application name instead of NAME-ME
+});
 
 const server = await init({ logger });
 createHelloWorldRoute({ server });

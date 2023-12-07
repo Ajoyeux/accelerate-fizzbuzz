@@ -11,6 +11,7 @@ describe('Messages History', () => {
         mocks = {
             logger: {
                 logError: vitest.fn(),
+                logInfo: vitest.fn(),
             },
         };
         app = await init(mocks);
