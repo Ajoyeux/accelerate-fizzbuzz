@@ -13,7 +13,10 @@ jobs:
         runs-on: ubuntu-latest
         name: Pass unit tests
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
+            - uses: webfactory/ssh-agent@v0.8.0
+              with:
+                ssh-private-key: ${{secrets.CLIENTELING_COMMONS_SSH_KEY}}
             - uses: actions/setup-node@v3
               with:
                   node-version: 'lts/*'
@@ -27,7 +30,10 @@ jobs:
         name: Build and deploy
         needs: unit-test
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
+            - uses: webfactory/ssh-agent@v0.8.0
+              with:
+                ssh-private-key: ${{secrets.CLIENTELING_COMMONS_SSH_KEY}}
             - uses: actions/setup-node@v3
               with:
                   node-version: 'lts/*'
