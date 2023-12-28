@@ -14,7 +14,7 @@ It is a Node.js project written in Typescript.
 
 ```bash
 git clone git@github.com:loccitane-group/typescript-service-template.git
-cd clienteling-back
+cd typescript-service-template
 ```
 
 -   Install dependencies
