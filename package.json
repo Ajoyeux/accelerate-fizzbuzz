@@ -11,7 +11,7 @@
         "format": "prettier --write .",
         "lint": "eslint --ext .ts,.json,.js --ignore-path .gitignore .",
         "type-check": "tsc -p tsconfig.json --noEmit",
-        "prepare": "husky install"
+        "prepare": "husky"
     },
     "lint-staged": {
         "*.{js,ts,json}": [
@@ -24,7 +24,7 @@
         "@types/node": "^20.10.7",
         "clienteling-commons": "github:clienteling-connect/commons",
         "dotenv": "^16.3.2",
-        "husky": "^8.0.3",
+        "husky": "^9.0.6",
         "typescript": "^5.3.3"
     },
     "devDependencies": {
