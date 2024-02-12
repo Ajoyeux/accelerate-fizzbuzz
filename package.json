@@ -21,9 +21,9 @@
     },
     "dependencies": {
         "@hapi/hapi": "^21.3.3",
-        "@types/node": "^20.11.16",
+        "@types/node": "^20.11.17",
         "clienteling-commons": "github:clienteling-connect/commons",
-        "dotenv": "^16.3.2",
+        "dotenv": "^16.4.2",
         "husky": "^9.0.10",
         "typescript": "^5.3.3"
     },
