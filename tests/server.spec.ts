@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, it, vitest } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { Server } from '@hapi/hapi';
 import { Dependencies, init } from '../src/server.js';
-import { Mocks } from './test-utils.js';
+import { createTestLogger, type Mocks } from 'clienteling-commons/tests/index.js';
 
 describe('Messages History', () => {
     let app: Server;
@@ -9,10 +9,7 @@ describe('Messages History', () => {
 
     beforeEach(async () => {
         mocks = {
-            logger: {
-                logError: vitest.fn(),
-                logInfo: vitest.fn(),
-            },
+            logger: createTestLogger(),
         };
         app = await init(mocks);
     });
