@@ -21,15 +21,15 @@
     },
     "dependencies": {
         "@hapi/hapi": "^21.3.7",
-        "@types/node": "^20.12.11",
+        "@types/node": "^20.12.12",
         "clienteling-commons": "github:clienteling-connect/commons",
         "dotenv": "^16.4.5",
         "husky": "^9.0.11",
         "typescript": "^5.4.3"
     },
     "devDependencies": {
-        "@typescript-eslint/eslint-plugin": "^7.8.0",
-        "@typescript-eslint/parser": "^7.8.0",
+        "@typescript-eslint/eslint-plugin": "^7.9.0",
+        "@typescript-eslint/parser": "^7.9.0",
         "@vitest/coverage-v8": "^1.6.0",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.0.0",
