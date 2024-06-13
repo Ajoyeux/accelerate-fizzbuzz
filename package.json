@@ -22,7 +22,7 @@
     "dependencies": {
         "@hapi/hapi": "^21.3.7",
         "@types/node": "^20.14.2",
-        "clienteling-commons": "github:clienteling-connect/commons",
+        "clienteling-commons": "github:clienteling-connect/commons#latest",
         "dotenv": "^16.4.5",
         "husky": "^9.0.11",
         "typescript": "^5.4.3"
@@ -39,7 +39,7 @@
         "prettier-eslint": "^16.3.0",
         "vitest": "^1.2.2"
     },
-  "engines": {
-    "node": ">=20"
-  }
+    "engines": {
+        "node": ">=20"
+    }
 }
