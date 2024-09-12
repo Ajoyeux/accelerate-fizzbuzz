@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { fizzbuzz } from '../src/fizzbuzz.js';
 
-describe('Fizz Buzz', () => {
+describe('Accelerate Kata', () => {
     it('should give 1 when 1 is given', async () => {
         const inputNumber = 1;
 
@@ -59,6 +59,24 @@ describe('Fizz Buzz', () => {
             const result = fizzbuzz(inputNumber);
 
             expect(result).toBe('Buzz');
+        });
+    });
+
+    describe('FizzBuzz', () => {
+        it('should give FizzBuzz when 15 is given', async () => {
+            const inputNumber = 15;
+
+            const result = fizzbuzz(inputNumber);
+
+            expect(result).toBe('FizzBuzz');
+        });
+
+        it('should give FizzBuzz when 30 is given', async () => {
+            const inputNumber = 30;
+
+            const result = fizzbuzz(inputNumber);
+
+            expect(result).toBe('FizzBuzz');
         });
     });
 });
