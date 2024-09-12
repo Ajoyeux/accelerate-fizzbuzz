@@ -1,9 +1,12 @@
-import { describe, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
+import { fizzbuzz } from '../src/fizzbuzz.js';
 
 describe('Fizz Buzz', () => {
-    it('GIVE ME A PROPER NAME', async () => {
-        //given
-        //when
-        //then
+    it('should give 10 when 10 is given', async () => {
+        const inputNumber = 10;
+
+        const result = fizzbuzz(inputNumber);
+
+        expect(result).toBe(10);
     });
 });
