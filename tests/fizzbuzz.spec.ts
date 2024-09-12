@@ -18,27 +18,47 @@ describe('Fizz Buzz', () => {
         expect(result).toBe(2);
     });
 
-    it('should give Fizz when 3 is given', async () => {
-        const inputNumber = 3;
+    describe('Fizz', () => {
+        it('should give Fizz when 3 is given', async () => {
+            const inputNumber = 3;
 
-        const result = fizzbuzz(inputNumber);
+            const result = fizzbuzz(inputNumber);
 
-        expect(result).toBe('Fizz');
+            expect(result).toBe('Fizz');
+        });
+
+        it('should give Fizz when 6 is given', async () => {
+            const inputNumber = 6;
+
+            const result = fizzbuzz(inputNumber);
+
+            expect(result).toBe('Fizz');
+        });
+
+        it('should give Fizz when 9 is given', async () => {
+            const inputNumber = 9;
+
+            const result = fizzbuzz(inputNumber);
+
+            expect(result).toBe('Fizz');
+        });
     });
 
-    it('should give Fizz when 6 is given', async () => {
-        const inputNumber = 6;
+    describe('Buzz', () => {
+        it('should give Buzz when 5 is given', async () => {
+            const inputNumber = 5;
 
-        const result = fizzbuzz(inputNumber);
+            const result = fizzbuzz(inputNumber);
 
-        expect(result).toBe('Fizz');
-    });
+            expect(result).toBe('Buzz');
+        });
 
-    it('should give Fizz when 9 is given', async () => {
-        const inputNumber = 9;
+        it('should give Buzz when 10 is given', async () => {
+            const inputNumber = 10;
 
-        const result = fizzbuzz(inputNumber);
+            const result = fizzbuzz(inputNumber);
 
-        expect(result).toBe('Fizz');
+            expect(result).toBe('Buzz');
+        });
     });
 });
