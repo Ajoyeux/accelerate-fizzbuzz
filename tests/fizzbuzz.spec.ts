@@ -25,4 +25,20 @@ describe('Fizz Buzz', () => {
 
         expect(result).toBe('Fizz');
     });
+
+    it('should give Fizz when 6 is given', async () => {
+        const inputNumber = 6;
+
+        const result = fizzbuzz(inputNumber);
+
+        expect(result).toBe('Fizz');
+    });
+
+    it('should give Fizz when 9 is given', async () => {
+        const inputNumber = 9;
+
+        const result = fizzbuzz(inputNumber);
+
+        expect(result).toBe('Fizz');
+    });
 });
