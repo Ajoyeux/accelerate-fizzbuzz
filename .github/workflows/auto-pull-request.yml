@@ -2,14 +2,23 @@ on:
   push:
     branches:
       - dev
+      - test
 
 jobs:
   pull-request:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: pull-request
+      - name: pull-request to test
+        if: ${{ github.ref_name == 'dev' }}
         uses: diillson/auto-pull-request@v1.0.1
         with:
           destination_branch: "test"
           pr_title: "Release to test"
+
+      - name: pull-request to prod
+        if: ${{ github.ref_name == 'test' }}
+        uses: diillson/auto-pull-request@v1.0.1
+        with:
+          destination_branch: "prod"
+          pr_title: "Release to prod"
