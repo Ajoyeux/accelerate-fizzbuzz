@@ -12,4 +12,3 @@ jobs:
         uses: diillson/auto-pull-request@v1.0.1
         with:
           destination_branch: "test"
-          github_token: ${{ github.token }}
